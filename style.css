@@ -1,12 +1,188 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
     min-height:100vh;
     overflow:hidden;
-    background:#09121f;
+    background:#08131f;
     font-family:Arial, Helvetica, sans-serif;
+    color:white;
+}
+
+/* Background */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+}
+
+.moon{
+
+    position:absolute;
+
+    top:60px;
+    right:80px;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#fff8d6;
+
+    box-shadow:
+
+    0 0 50px #fff5aa,
+    0 0 120px #fff5aa;
+}
+
+/* Stars */
+
+.stars span{
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:twinkle 3s infinite alternate;
+}
+
+.stars span:nth-child(1){top:10%;left:10%;}
+.stars span:nth-child(2){top:30%;left:20%;}
+.stars span:nth-child(3){top:18%;left:55%;}
+.stars span:nth-child(4){top:25%;left:80%;}
+.stars span:nth-child(5){top:60%;left:15%;}
+.stars span:nth-child(6){top:70%;left:65%;}
+.stars span:nth-child(7){top:80%;left:35%;}
+.stars span:nth-child(8){top:40%;left:90%;}
+
+@keyframes twinkle{
+
+from{
+
+opacity:.2;
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1.4);
+
+}
+
+}
+
+/* Main */
+
+.scene{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+/* Windshield */
+
+.windshield{
+
+width:min(90%,700px);
+
+padding:50px;
+
+border-radius:40px 40px 120px 120px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(14px);
+
+border:2px solid rgba(255,255,255,.15);
+
+text-align:center;
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.4);
+
+animation:float 5s ease-in-out infinite;
+
+}
+
+.windshield h1{
+
+font-size:3rem;
+
+margin-bottom:15px;
+
+}
+
+.windshield p{
+
+font-size:1.2rem;
+
+color:#d5e5ff;
+
+margin-bottom:40px;
+
+}
+
+.choices{
+
+display:flex;
+
+gap:20px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+button{
+
+padding:18px 28px;
+
+border:none;
+
+border-radius:18px;
+
+background:#2f80ed;
+
+color:white;
+
+font-size:1rem;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-5px);
+
+background:#4d98ff;
+
+box-shadow:0 10px 25px rgba(77,152,255,.4);
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
 }
